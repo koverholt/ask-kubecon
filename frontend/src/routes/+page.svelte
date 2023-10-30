@@ -64,7 +64,7 @@
 	}
 </script>
 
-<Navbar class="bg-[#275b89] pt-2">
+<Navbar class="bg-[#59577c] pt-2">
 	<NavBrand>
 		<span class="self-center whitespace-nowrap text-xl font-semibold text-[#e4fef6]">
 			Ask KubeCon
@@ -89,13 +89,13 @@
 </Navbar>
 
 <div class="flex flex-col w-full px-10">
-	<!-- <div class="mt-10 px-10 -mb-20">
-		<img src="dora.png" width="400px" alt="DevOps Research and Assessment (DORA)" />
-	</div> -->
+	<div class="mt-10 px-10 -mb-10">
+		<img src="cloud.png" alt="Google Cloud at KubeCon + CloudNativeCon North America 2023" />
+	</div>
 	<Section name="cta">
 		<Cta ctatype="image">
 			<svelte:fragment slot="h2">Ask KubeCon anything in natural language</svelte:fragment>
-			<p class="mt-6 mb-2 font-light text-gray-500 dark:text-gray-400 md:text-lg">
+			<p class="mt-10 font-light text-gray-500 dark:text-gray-400 md:text-lg">
 				This app uses
 				<A
 					href="https://cloud.google.com/generative-ai-app-builder/docs/introduction"
@@ -108,13 +108,13 @@
 					class="font-medium hover:underline break-normal text-[#0000EE]"
 					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/"
 					>KubeCon website</A
-				> using LLMs and a conversational search experience.
+				>.
 			</p>
 		</Cta>
 
-		<form class="w-full flex flex-col items-center -mt-6" on:submit|preventDefault={onSubmit}>
+		<form class="w-full flex flex-col items-center" on:submit|preventDefault={onSubmit}>
 			<h1 class="my-2 text-white text-xl text-center">My custom search widget</h1>
-			<div class="text-center mb-8">
+			<div class="text-center">
 				<span class="font-bold">Example questions:</span>
 				<ButtonGroup>
 					<Button on:click={() => updateSearchField('When is KubeCon?')}>When is KubeCon?</Button>
@@ -128,7 +128,7 @@
 					</Button>
 				</ButtonGroup>
 			</div>
-			<div>
+			<div class="mt-10">
 				<div class="relative text-gray-600 focus-within:text-gray-400 flex justify-center gap-2">
 					<span class="absolute inset-y-0 left-0 flex items-center pl-2">
 						<button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
