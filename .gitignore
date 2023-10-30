@@ -1,0 +1,12 @@
+.DS_Store
+.vscode/
+node_modules
+build/
+.svelte-kit
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.firebase/
+crawler/html/

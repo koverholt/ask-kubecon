@@ -1,0 +1,7 @@
+{
+	"hosting": {
+		"target": "ask-kubecon",
+		"public": "build",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "kubecon-gen-ai"
+  },
+  "targets": {
+    "kubecon-gen-ai": {
+      "hosting": {
+        "ask-kubecon": [
+          "ask-kubecon"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
