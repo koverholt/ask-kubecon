@@ -2,10 +2,9 @@
 	import { lookupWidgetConfig, widgetConverseConversation } from '../lib/discovery_engine';
 	import { onMount } from 'svelte';
 	import { Navbar, NavBrand, NavLi, NavUl } from 'flowbite-svelte';
-	import { Heading, A, Label, Card } from 'flowbite-svelte';
+	import { Heading, A, Card } from 'flowbite-svelte';
 	import { Section, Cta } from 'flowbite-svelte-blocks';
-	import { Alert } from 'flowbite-svelte';
-	import { InfoCircleSolid } from 'flowbite-svelte-icons';
+
 	import { ButtonGroup, Button } from 'flowbite-svelte';
 
 	const widgetId = 'f50071d6-9856-4e98-8204-0c7fc61acd3c';
@@ -72,9 +71,11 @@
 		</span>
 	</NavBrand>
 	<NavUl>
-    <NavLi class="text-gray-50"
-    href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/">KubeCon
-    Website</NavLi>
+		<NavLi
+			class="text-gray-50"
+			href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/"
+			>KubeCon Website</NavLi
+		>
 		<NavLi
 			class="text-gray-50"
 			href="https://cloud.google.com/generative-ai-app-builder/docs/introduction"
@@ -83,7 +84,7 @@
 		<NavLi class="text-gray-50" href="https://cloud.google.com/ai/generative-ai"
 			>Generative AI on Google Cloud</NavLi
 		>
-		<NavLi class="text-gray-50" href="https://github.com/koverholt/ask-dora">Source Code</NavLi>
+		<NavLi class="text-gray-50" href="https://github.com/koverholt/ask-kubecon">Source Code</NavLi>
 	</NavUl>
 </Navbar>
 
@@ -105,7 +106,8 @@
 					href="https://cloud.google.com/">Google Cloud</A
 				> to search and summarize content on the <A
 					class="font-medium hover:underline break-normal text-[#0000EE]"
-					href="https://dora.dev/">KubeCon website</A
+					href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/"
+					>KubeCon website</A
 				> using LLMs and a conversational search experience.
 			</p>
 		</Cta>
@@ -115,16 +117,14 @@
 			<div class="text-center mb-8">
 				<span class="font-bold">Example questions:</span>
 				<ButtonGroup>
-					<Button on:click={() => updateSearchField('Are there any sessions about CI/CD?')}>
-						Are there any speakers from Google?</Button
-					>
-					<Button on:click={() => updateSearchField('How can I measure developer happiness?')}>
-						How can I measure developer happiness?
+					<Button on:click={() => updateSearchField('When is KubeCon?')}>When is KubeCon?</Button>
+					<Button on:click={() => updateSearchField('Are there sessions about GKE?')}>
+						Are there sessions about GKE?
 					</Button>
 					<Button
-						on:click={() => updateSearchField('What are the benefits of having strong user focus?')}
+						on:click={() => updateSearchField('Where can I learn more about DOS protection?')}
 					>
-						What are the benefits of having strong user focus?
+						Where can I learn more about DOS protection?
 					</Button>
 				</ButtonGroup>
 			</div>
@@ -229,18 +229,11 @@
 						size="lg"
 						target="_blank"
 						href={result.document.derivedStructData.link
-							.replace(
-								'gs://dora-unstructured-docs/',
-								'https://storage.googleapis.com/dora-unstructured-docs/'
-							)
-							.replace(
-								'https://storage.googleapis.com/dora-unstructured-docs/2023 Accelerate State of DevOps Report.pdf',
-								'https://cloud.google.com/devops/state-of-devops'
-							)
+							.replace('gs://ask-kubecon/', 'https://storage.googleapis.com/ask-kubecon/')
 							.replace('.html', '')
 							.replaceAll('$', '/')
 							.replaceAll('#', ':')
-							.replace('dora-dev', 'dora.dev')}
+							.replace('kccncna2023-sched-com', 'kccncna2023.sched.com')}
 					>
 						<div class="flex gap-6">
 							<div>
@@ -265,12 +258,12 @@
 								<h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
 									{makeTitle(
 										result.document.derivedStructData.link
-											.replace('gs://dora-unstructured-docs/', '')
+											.replace('gs://ask-kubecon/', '')
 											.replace('https', '')
 											.replace('.html', '')
 											.replaceAll('$', '-')
 											.replaceAll('#', '-')
-											.replace('dora-dev', '')
+											.replace('kccncna2023-sched-com', '')
 									)}
 								</h5>
 								<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -285,11 +278,11 @@
 						size="lg"
 						target="_blank"
 						href={result.document.derivedStructData.link
-							.replace('gs://dora-unstructured-docs/', '')
+							.replace('gs://ask-kubecon/', '')
 							.replace('.html', '')
 							.replaceAll('$', '/')
 							.replaceAll('#', ':')
-							.replace('dora-dev', 'dora.dev')}
+							.replace('kccncna2023-sched-com', 'kccncna2023.sched.com')}
 					>
 						<div class="flex gap-6">
 							<div>
@@ -314,12 +307,12 @@
 								<h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
 									{makeTitle(
 										result.document.derivedStructData.link
-											.replace('gs://dora-unstructured-docs/', '')
+											.replace('gs://ask-kubecon/', '')
 											.replace('https', '')
 											.replace('.html', '')
 											.replaceAll('$', '-')
 											.replaceAll('#', '-')
-											.replace('dora-dev', '')
+											.replace('kccncna2023-sched-com', '')
 									)}
 								</h5>
 								<p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
